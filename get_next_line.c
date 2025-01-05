@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 11:06:12 by hounajar          #+#    #+#             */
-/*   Updated: 2025/01/05 21:39:40 by hounajar         ###   ########.fr       */
+/*   Updated: 2025/01/05 22:39:35 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,9 @@ char *get_next_line(int fd)
 	// printf("entering extract line func\n");
 	line = extract_line(buff);
 	printf("-----------------buff-----------\n%s\n", buff);
+	if (!*buff)
+		return (NULL);
+	
 	buff += size_cal(buff);
 	return line;
 }
@@ -76,4 +79,5 @@ int main()
 	printf("1:\n%s" , get_next_line(fd));
 	printf("2:\n%s" , get_next_line(fd));
 	printf("3:\n%s" , get_next_line(fd));
+	printf("4:\n%s" , get_next_line(fd));
 }
