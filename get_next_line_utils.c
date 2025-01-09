@@ -6,21 +6,59 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 11:06:15 by hounajar          #+#    #+#             */
-/*   Updated: 2025/01/05 12:02:54 by hounajar         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:34:48 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <get_next_line.h>
+#include "get_next_line.h"
 
-char	*ft_strchr(const char *str, int c)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	while (*str)
+	unsigned char		*d;
+	const unsigned char	*s;
+
+	s = (const unsigned char *)src;
+	d = (unsigned char *)dest;
+	if (d == s || n == 0)
+		return (dest);
+	if (d < s)
 	{
-		if (*str == (unsigned char)c)
-			return ((char *)str);
-		str++;
+		while (n--)
+		{
+			*d++ = *s++;
+		}
 	}
-	if ((unsigned char)c == '\0')
-		return ((char *)str);
-	return (NULL);
+	else
+	{
+		d = d + n - 1;
+		s = s + n - 1;
+		while (n--)
+		{
+			*d-- = *s--;
+		}
+	}
+	return (dest);
+}
+char	*ft_strdup(const char *s)
+{
+	size_t	size;
+	char	*dest;
+
+	size = ft_strlen(s) + 1;
+	dest = malloc(size);
+	if (dest == NULL)
+		return (NULL);
+	ft_memmove(dest, s, size);
+	return (dest);
+}
+size_t	ft_strlen(const char *str)
+{
+	size_t	counter;
+
+	counter = 0;
+	while (str[counter])
+	{
+		counter++;
+	}
+	return (counter);
 }
