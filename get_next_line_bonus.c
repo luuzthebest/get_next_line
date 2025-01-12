@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 11:06:12 by hounajar          #+#    #+#             */
-/*   Updated: 2025/01/12 23:44:16 by hounajar         ###   ########.fr       */
+/*   Updated: 2025/01/12 23:53:12 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,26 +94,15 @@ char	*read_buff(int fd, char *buff)
 
 char	*get_next_line(int fd)
 {
-	static char	*buff;
+	static char	*buff[1024];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buff = read_buff(fd, buff);
-	if (!buff)
+	buff[fd] = read_buff(fd, buff[fd]);
+	if (!buff[fd])
 		return (NULL);
-	line = extract_line(buff);
-	buff = update_buff(buff);
+	line = extract_line(buff[fd]);
+	buff[fd] = update_buff(buff[fd]);
 	return (line);
 }
-// int main()
-// {
-// 	int fd = open("text.txt", O_RDONLY);
-// 	char *res = get_next_line(fd);
-// 	while (res)
-// 	{
-// 		printf("%s", res);
-// 		free(res);
-// 		res = get_next_line(fd);
-// 	}
-// }
