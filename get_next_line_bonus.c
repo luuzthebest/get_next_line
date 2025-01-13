@@ -6,11 +6,11 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 11:06:12 by hounajar          #+#    #+#             */
-/*   Updated: 2025/01/12 23:53:12 by hounajar         ###   ########.fr       */
+/*   Updated: 2025/01/13 18:07:48 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	size_cal(char *buff)
 {

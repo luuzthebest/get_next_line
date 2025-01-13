@@ -6,11 +6,11 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 11:06:15 by hounajar          #+#    #+#             */
-/*   Updated: 2025/01/12 23:53:38 by hounajar         ###   ########.fr       */
+/*   Updated: 2025/01/13 18:08:17 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

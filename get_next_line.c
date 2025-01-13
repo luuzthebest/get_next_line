@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 11:06:12 by hounajar          #+#    #+#             */
-/*   Updated: 2025/01/12 23:44:16 by hounajar         ###   ########.fr       */
+/*   Updated: 2025/01/13 18:07:35 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,14 +106,3 @@ char	*get_next_line(int fd)
 	buff = update_buff(buff);
 	return (line);
 }
-// int main()
-// {
-// 	int fd = open("text.txt", O_RDONLY);
-// 	char *res = get_next_line(fd);
-// 	while (res)
-// 	{
-// 		printf("%s", res);
-// 		free(res);
-// 		res = get_next_line(fd);
-// 	}
-// }
