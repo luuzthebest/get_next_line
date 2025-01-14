@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 11:06:12 by hounajar          #+#    #+#             */
-/*   Updated: 2025/01/13 18:07:35 by hounajar         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:57:49 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,13 @@ char	*read_buff(int fd, char *buff)
 	while (bytes_read > 0 && !ft_strchr(buff, '\n'))
 	{
 		bytes_read = read(fd, line, BUFFER_SIZE);
+		if (bytes_read == -1)
+		{
+			free(line);
+			return (NULL);
+		}
 		line[bytes_read] = '\0';
 		buff = ft_strjoin(buff, line);
-	}
-	if (bytes_read == -1)
-	{
-		free(line);
-		return (NULL);
 	}
 	free(line);
 	return (buff);

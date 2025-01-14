@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 11:06:15 by hounajar          #+#    #+#             */
-/*   Updated: 2025/01/13 13:46:47 by hounajar         ###   ########.fr       */
+/*   Updated: 2025/01/14 12:58:39 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	len = s1_len + s2_len;
 	joinedstr = malloc(len + 1);
 	if (joinedstr == NULL)
-	{
-		free(joinedstr);
 		return (NULL);
-	}
 	ft_strlcpy(joinedstr, s1, s1_len + 1);
 	ft_strlcpy(joinedstr + s1_len, s2, s2_len + 1);
 	free(s1);
