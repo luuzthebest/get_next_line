@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 11:06:12 by hounajar          #+#    #+#             */
-/*   Updated: 2025/01/14 12:58:19 by hounajar         ###   ########.fr       */
+/*   Updated: 2025/01/15 15:04:55 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ char	*read_buff(int fd, char *buff)
 		if (bytes_read == -1)
 		{
 			free(line);
+			free(buff);
 			return (NULL);
 		}
 		line[bytes_read] = '\0';
