@@ -6,7 +6,7 @@
 /*   By: hounajar <hounajar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 11:06:12 by hounajar          #+#    #+#             */
-/*   Updated: 2025/01/15 15:04:55 by hounajar         ###   ########.fr       */
+/*   Updated: 2025/01/15 15:16:23 by hounajar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ char	*get_next_line(int fd)
 	static char	*buff[1024];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= 1024)
 		return (NULL);
 	buff[fd] = read_buff(fd, buff[fd]);
 	if (!buff[fd])
